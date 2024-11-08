@@ -1,5 +1,4 @@
 import pytest
-from DataStructures.Utils.utils import handle_not_implemented
 from DataStructures.Graph import adj_list_graph as gl
 from DataStructures.Map import map_linear_probing as mp
 from DataStructures.List import array_list as lt
@@ -27,8 +26,6 @@ def setup_tests():
 
     return empty_graph, some_graph
 
-
-@handle_not_implemented
 def test_new_graph():
     graph = gl.new_graph(10, False)
     assert graph["edges"] == 0
@@ -38,8 +35,6 @@ def test_new_graph():
     assert graph["information"]["capacity"] == mp.new_map(10, 0.5)["capacity"]
     assert graph["information"]["type"] == "PROBING"
 
-
-@handle_not_implemented
 def test_insert_vertex():
     empty_graph, some_graph = setup_tests()
 
@@ -57,16 +52,12 @@ def test_insert_vertex():
     assert some_graph["information"]["size"] == 3
     pass
 
-
-@handle_not_implemented
 def test_num_vertices():
     empty_graph, some_graph = setup_tests()
 
     assert gl.num_vertices(empty_graph) == 0
     assert gl.num_vertices(some_graph) == 2
 
-
-@handle_not_implemented
 def test_num_edges():
     empty_graph, some_graph = setup_tests()
 
@@ -74,8 +65,6 @@ def test_num_edges():
 
     assert gl.num_edges(some_graph) == 1
 
-
-@handle_not_implemented
 def test_vertices():
     empty_graph, some_graph = setup_tests()
 
@@ -88,8 +77,6 @@ def test_vertices():
     assert lt.size(vertices) == 2
     assert vertices["elements"] is not None
 
-
-@handle_not_implemented
 def test_edges():
     empty_graph, some_graph = setup_tests()
 
@@ -102,8 +89,6 @@ def test_edges():
     assert lt.size(edges) == 1
     assert edges["elements"] is not None
 
-
-@handle_not_implemented
 def test_degree():
     empty_graph, some_graph = setup_tests()
 
@@ -113,8 +98,6 @@ def test_degree():
     assert gl.degree(some_graph, 1) == 1
     assert gl.degree(some_graph, 2) == 1
 
-
-@handle_not_implemented
 def test_in_degree():
     empty_graph, some_graph = setup_tests()
 
@@ -124,8 +107,6 @@ def test_in_degree():
     assert gl.in_degree(some_graph, 1) == 1
     assert gl.in_degree(some_graph, 2) == 1
 
-
-@handle_not_implemented
 def test_add_edge():
     empty_graph, some_graph = setup_tests()
 
